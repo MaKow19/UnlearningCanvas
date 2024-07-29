@@ -7,7 +7,7 @@ import NavBar from './Pages/NavBar';
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/UnlearningCanvas">
         <NavBar />
           <Routes>
               <Route index element={<About/>} />

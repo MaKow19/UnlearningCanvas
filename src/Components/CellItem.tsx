@@ -14,7 +14,7 @@ type CellItemProps = {
     handleDelete: (index: number) => void;
 }
 
-const CellItem: React.FC<CellItemProps> = ({ texts, onEditItem, editableIndex, setEditableIndex, handleBlur, handleItemClick, handleDelete }) => {
+const CellItem: React.FC<CellItemProps> = ({ texts, onEditItem, editableIndex, setEditableIndex, handleBlur, handleDelete }) => {
     const handleButtonClick = (index: number) => {
         setEditableIndex(index);
     }

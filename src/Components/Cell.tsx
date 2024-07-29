@@ -1,7 +1,6 @@
-import { Grid, Divider, TextField, Typography, Stack, IconButton } from "@mui/material";
+import { Grid, Divider, TextField, Typography, Stack } from "@mui/material";
 import React, { useState, ChangeEvent, KeyboardEvent } from "react";
 import CellItem from './CellItem';
-import InfoIcon from '@mui/icons-material/Info';
 import InfoCanvasButton from "./InfoCanvasButton";
 
 type CellProps = {

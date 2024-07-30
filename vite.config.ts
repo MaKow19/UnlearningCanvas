@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/UnlreaningCanvas/",
   plugins: [react()],
+  base: "https://makow19.github.io/UnlearningCanvas/"
 })

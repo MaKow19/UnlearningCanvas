@@ -1,12 +1,12 @@
-import { Stack, Typography, Card } from "@mui/material";
-
-
+import { Stack, Typography, Card, Button, CardContent, CardMedia } from "@mui/material";
+import { Link } from 'react-router-dom';
+import UnlearningCanvasLogo from '../Images/UnlearningCanvasLogo.jpg';
 
 const About = () => {
     return(
         <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} width={1490} height={'auto'}>
-            <Stack width={1200} sx={{pb: 10}}>
-                <Card>
+            <Stack direction={'row'} width={1200} sx={{pb: 7}}>
+                <Card sx={{mr: 10}}>
                     <Typography variant='h4'>
                         Was ist Unlearning?
                     </Typography>
@@ -16,9 +16,6 @@ const About = () => {
                     Diese zu hinterfragen und ggf. auszutauschen kann einen strategischen Vorteil für die Organisation bieten. 
                     </Typography>
                 </Card>
-            </Stack>
-            
-            <Stack width={1200} sx={{pb: 10}}>
                 <Card>
                     <Typography variant='h4'>
                         Was ist ein Canvas?
@@ -30,7 +27,27 @@ const About = () => {
                     </Typography>
                 </Card>
             </Stack>
-
+            
+            <Stack alignContent={'center'} width={320} height={390} sx={{mb: 7, bgcolor: 'lightgrey'}}>
+                <Card>
+                    <CardMedia
+                        component='img'
+                        height='auto'
+                        image={UnlearningCanvasLogo}
+                        alt='Unlearning Canvas'
+                    />
+                    <CardContent>
+                        <Button>
+                            <Link to='/canvas' style={{ textDecoration: 'none' }}>
+                                <Typography sx={{ color: 'black', padding: '0.5rem', borderRadius: '4px' }}>
+                                    Zum Canvas
+                                </Typography>
+                            </Link>
+                        </Button>
+                    </CardContent>                    
+                </Card>
+            </Stack>
+            
             <Stack width={1200}>
                 <Card>
                     <Typography variant='h4'>

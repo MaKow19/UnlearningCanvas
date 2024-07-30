@@ -1,6 +1,7 @@
 import { Stack, Typography, Card, Button, CardContent, CardMedia } from "@mui/material";
 import { Link } from 'react-router-dom';
 import UnlearningCanvasLogo from '../Images/UnlearningCanvasLogo.jpg';
+import { Anleitung } from "../Components/Anleitung";
 
 const About = () => {
     return(
@@ -48,15 +49,8 @@ const About = () => {
                 </Card>
             </Stack>
             
-            <Stack width={1200}>
-                <Card>
-                    <Typography variant='h4'>
-                        Nutzungshinweise
-                    </Typography>
-                    <Typography color={'black'}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id atque quae provident nostrum quis! Id itaque reiciendis nulla soluta earum architecto non! Veritatis nobis delectus adipisci excepturi distinctio, sed voluptates!
-                    </Typography>
-                </Card>
+            <Stack>
+                <Anleitung/>
             </Stack>
         </Stack>
     )

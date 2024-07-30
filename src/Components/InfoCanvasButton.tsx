@@ -2,39 +2,25 @@ import React, { useState } from 'react';
 import { IconButton, Dialog, DialogTitle, DialogContent, Typography, Stack } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import CloseIcon from '@mui/icons-material/Close';
+import { Anleitung } from './Anleitung';
 
 type InfoCanvasButtonProps = {
   title: string;
+  index: number;
 }
 
-const InfoCanvasButton: React.FC<InfoCanvasButtonProps> = ({ title }) => {
+const InfoCanvasButton: React.FC<InfoCanvasButtonProps> = ({ title, index }) => {
   const [open, setOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState<number | undefined>(undefined);
 
   const handleClickOpen = () => {
     setOpen(true);
+    setSelectedIndex(index); // Setze den ausgewählten Index, wenn der Button geöffnet wird
   };
 
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const getContent = (title: string) => {
-    switch (title) {
-      case 'Hinweise erfassen':
-        return 'Hier können Sie Hinweise erfassen.';
-      case 'Festlegung des Hinweises':
-        return 'Hier legen Sie den Hinweis fest.';
-      case 'Teamreflektion':
-        return 'Hier erfolgt die Teamreflektion.';
-      case 'Proaktiv Hindernisse erkennen':
-        return 'Hier erkennen Sie proaktiv Hindernisse.';
-      case 'Gemeinsames Verständnis der Beteiligten':
-        return 'Hier schaffen Sie ein gemeinsames Verständnis der Beteiligten.';
-      case 'Sensing Datenbank':
-        return 'Hier befindet sich die Sensing Datenbank.';
-      default:
-        return '';
-    }
+    setSelectedIndex(undefined); // Reset the selected index when the dialog is closed
   };
 
   return (
@@ -42,29 +28,30 @@ const InfoCanvasButton: React.FC<InfoCanvasButtonProps> = ({ title }) => {
       <IconButton onClick={handleClickOpen}>
         <InfoIcon />
       </IconButton>
-      <Dialog open={open} onClose={handleClose}>
-        <Stack justifyContent={'center'}>
-            <Stack alignItems={'flex-end'}>
-                <IconButton onClick={handleClose}>
-                    <CloseIcon />
-                </IconButton>
-            </Stack>
-            <Stack>
-                <DialogTitle>
-                    {title}
-                </DialogTitle>
-            </Stack>
-            
+      <Dialog 
+        open={open} 
+        onClose={handleClose} 
+        fullWidth
+        maxWidth="md"
+        sx={{ 
+          '& .MuiDialog-paper': { 
+            width: '100%', 
+            height: '100%', 
+            maxHeight: '800px', 
+            overflow: 'hidden'
+          } 
+        }}
+      >
+        <Stack height="100%" width="100%" direction="column" spacing={2}>
+          <Stack direction="row" justifyContent="flex-end" sx={{ padding: 1 }}>
+            <IconButton onClick={handleClose}>
+              <CloseIcon />
+            </IconButton>
+          </Stack>
+          <DialogContent sx={{ overflowY: 'auto' }}>
+            <Anleitung index={selectedIndex} />
+          </DialogContent>
         </Stack>
-        
-        
-        
-        
-        <DialogContent>
-          <Typography>
-            {getContent(title)}
-          </Typography>
-        </DialogContent>
       </Dialog>
     </>
   );

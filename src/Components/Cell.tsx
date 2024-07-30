@@ -5,11 +5,12 @@ import InfoCanvasButton from "./InfoCanvasButton";
 
 type CellProps = {
     title: string;
+    index: number;
     numberIcon?: React.ReactNode
     titleIcon?: React.ReactNode
 }
 
-const Cell = ({ title, numberIcon, titleIcon }: CellProps) => {
+const Cell = ({ title, numberIcon, titleIcon, index }: CellProps) => {
 
     const [value, setValue] = useState('');
     const [itemList, setItemList] = useState<string[]>([]);
@@ -51,7 +52,7 @@ const Cell = ({ title, numberIcon, titleIcon }: CellProps) => {
                 <Stack height={'auto'} sx={{pb: 1}}>
                     <Typography variant={'h5'}>
                         {title}
-                        <InfoCanvasButton title={title}/>
+                        <InfoCanvasButton title={title} index={index} />
                     </Typography>
                     
                 </Stack>

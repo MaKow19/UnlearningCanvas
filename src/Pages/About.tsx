@@ -2,10 +2,12 @@ import { Stack, Typography, Card, Button, CardContent, CardMedia } from "@mui/ma
 import { Link } from 'react-router-dom';
 import UnlearningCanvasLogo from '../Images/UnlearningCanvasLogo.jpg';
 import { Anleitung } from "../Components/Anleitung";
+import CreateSession from "../Components/CreateSession";
 
 const About = () => {
     return(
         <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} width={1490} height={'auto'}>
+            <CreateSession />
             <Stack direction={'row'} width={1200} sx={{pb: 7}}>
                 <Card sx={{mr: 10}}>
                     <Typography variant='h4'>

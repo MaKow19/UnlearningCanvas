@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IconButton, Dialog, DialogTitle, DialogContent, Typography, Stack } from '@mui/material';
+import { IconButton, Dialog, DialogContent, Stack } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import CloseIcon from '@mui/icons-material/Close';
 import { Anleitung } from './Anleitung';
@@ -9,7 +9,7 @@ type InfoCanvasButtonProps = {
   index: number;
 }
 
-const InfoCanvasButton: React.FC<InfoCanvasButtonProps> = ({ title, index }) => {
+const InfoCanvasButton: React.FC<InfoCanvasButtonProps> = ({ index }) => {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState<number | undefined>(undefined);
 

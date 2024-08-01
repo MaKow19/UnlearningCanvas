@@ -1,15 +1,62 @@
-import { Stack, Typography, Card, Button, CardContent, CardMedia } from "@mui/material";
-import { Link } from 'react-router-dom';
+import { Stack, Typography, Card, Button, CardContent, CardMedia, TextField } from "@mui/material";
+import { Link, useNavigate } from 'react-router-dom';
 import UnlearningCanvasLogo from '../Images/UnlearningCanvasLogo.jpg';
 import { Anleitung } from "../Components/Anleitung";
-import CreateSession from "../Components/CreateSession";
+import { useState } from "react";
+import axios from "axios";
 
 const About = () => {
-    return(
+    const [sessionId, setSessionId] = useState('');
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        if (sessionId) {
+            sessionStorage.setItem('sessionId', sessionId);
+            navigate('/canvas');
+        }
+    }
+    
+    const handleRegister = async () => {
+        if (!sessionId) {
+            console.error('Session ID is required');
+            return;
+        }
+    
+        try {
+            const response = await axios.post('http://localhost:8080/api/about', { sessionId }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (response.status === 201) {
+                sessionStorage.setItem('sessionId', sessionId);
+                alert(`Session ID erfolgreich registriert, du kannst dich jetzt einloggen!`)
+                navigate('/about');
+            }
+        } catch (err) {
+            console.error('Failed to create session');
+        }
+    };
+    
+    return (
         <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} width={1490} height={'auto'}>
-            <CreateSession />
-            <Stack direction={'row'} width={1200} sx={{pb: 7}}>
-                <Card sx={{mr: 10}}>
+            <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} width={1200} sx={{ pb: 7 }}>
+                <TextField 
+                    label="Session ID" 
+                    value={sessionId} 
+                    onChange={(e) => setSessionId(e.target.value)} 
+                    margin="normal"
+                />
+                <Button variant="contained" color="primary" onClick={handleLogin}>
+                    Login
+                </Button>
+                <Button variant="contained" color="secondary" onClick={handleRegister} sx={{ mt: 2 }}>
+                    Register
+                </Button>
+
+            </Stack>
+            <Stack direction={'row'} width={1200} sx={{ pb: 7 }}>
+                <Card sx={{ mr: 10 }}>
                     <Typography variant='h4'>
                         Was ist Unlearning?
                     </Typography>
@@ -30,8 +77,7 @@ const About = () => {
                     </Typography>
                 </Card>
             </Stack>
-            
-            <Stack alignContent={'center'} width={320} height={390} sx={{mb: 7, bgcolor: 'lightgrey'}}>
+            <Stack alignContent={'center'} width={320} height={390} sx={{ mb: 7, bgcolor: 'lightgrey' }}>
                 <Card>
                     <CardMedia
                         component='img'
@@ -47,15 +93,13 @@ const About = () => {
                                 </Typography>
                             </Link>
                         </Button>
-                    </CardContent>                    
+                    </CardContent>
                 </Card>
             </Stack>
-            
             <Stack>
-                <Anleitung/>
+                <Anleitung />
             </Stack>
         </Stack>
-    )
+    );
 }
-
 export default About;

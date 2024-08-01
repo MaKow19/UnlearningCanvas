@@ -9,7 +9,7 @@ import Grid from '@mui/material/Grid';
 export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1, pb: 5 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#ffffff' }}>
+      <AppBar position="static" sx={{ backgroundColor: '#f2f4ff' }}>
         <Toolbar>
           <Grid container alignItems="center">
             <Grid item xs={2} />

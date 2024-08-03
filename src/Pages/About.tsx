@@ -39,9 +39,9 @@ const About = () => {
     };
     
     return (
-        <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} width={1490} height={'auto'}>
+        <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} width={2000} height={'auto'}>
             <Stack direction={'row'} width={1200} sx={{ pb: 7, justifyContent: 'center' }}>
-                <Card sx={{ mr: 10, maxWidth: 400, bgcolor: '#fafcff'}}>
+                <Card sx={{ mr: 10, minWidth: 550, bgcolor: '#f2f4ff'}}>
                     <Typography variant='h4'>
                         Was ist Unlearning?
                     </Typography>
@@ -55,9 +55,9 @@ const About = () => {
                         Diese zu hinterfragen und ggf. auszutauschen kann einen strategischen Vorteil für die Organisation bieten. 
                     </Typography>
                 </Card>
-                <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} sx={{ pb: 7 }}>
+                <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} width={300} sx={{ pb: 7 }}>
                     <TextField 
-                        label="Session ID" 
+                        label="Session ID"
                         value={sessionId} 
                         onChange={(e) => setSessionId(e.target.value)} 
                         margin="normal"
@@ -70,7 +70,7 @@ const About = () => {
                     </Button>
 
                 </Stack>
-                <Card sx={{ maxWidth: 400, ml: 10, bgcolor: '#fafcff'}}>
+                <Card sx={{ minWidth: 550, ml: 10, bgcolor: '#f2f4ff'}}>
                     <Typography variant='h4'>
                         Was sind Visual Inquiry Tools?
                     </Typography>

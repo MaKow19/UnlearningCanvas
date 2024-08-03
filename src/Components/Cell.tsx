@@ -21,7 +21,7 @@ const Cell = ({ title, numberIcon, titleIcon, index }: CellProps) => {
         if (sessionId) {
             fetchSessionData(sessionId).then((data) => {
                 const fields = [
-                    data.feld1, data.feld2, data.feld3, data.feld4, data.feld5, data.feld6
+                    data.feld1, data.feld2, data.feld3, data.feld4, data.feld5, data.feld6, data.feld7
                 ];
                 
                 const fieldValue = fields[index];

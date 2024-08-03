@@ -15,38 +15,43 @@ import InterpreterModeIcon from '@mui/icons-material/InterpreterMode';
 const Layout = () => {
     return (
         
-            <Stack width={1490} display={'flex'} direction={'row'} justifyContent={'center'} spacing={2} useFlexGap flexWrap="wrap">
+            <Stack width={2000} display={'flex'} direction={'row'} justifyContent={'center'} spacing={2} useFlexGap flexWrap="wrap">
                 <Card>
                     <Stack bgcolor={'#ffffff'} sx={{ minWidth: 350, minHeight: 500, overflow: 'auto', width: 200, height: 424, border: 'solid'}}>
-                        <Cell index={0} title={'Hinweise erfassen'} numberIcon={<LooksOneIcon/>} titleIcon={<LiveHelpIcon/>}></Cell>
+                        <Cell index={0} title={'Festlegung der Rahmenbendingen'} ></Cell>
                     </Stack>
                 </Card>
                 <Card>
                     <Stack bgcolor={'#ffffff'} sx={{ minWidth: 350, minHeight: 500, overflow: 'auto', width: 200, height: 424, border: 'solid'}}>
-                        <Cell index={1} title={'Festlegung des Hinweises'} numberIcon={<LooksTwoIcon/>} titleIcon={<FeedbackIcon/>}></Cell>
+                        <Cell index={1} title={'Hinweise erfassen'} numberIcon={<LooksOneIcon/>} titleIcon={<LiveHelpIcon/>}></Cell>
                     </Stack>
                 </Card>
                 <Card>
                     <Stack bgcolor={'#ffffff'} sx={{ minWidth: 350, minHeight: 500, overflow: 'auto', width: 200, height: 424, border: 'solid'}}>
-                        <Cell index={2} title={'Teamreflektion'} numberIcon={<Looks3Icon/>} titleIcon={<GroupsIcon/>}></Cell>
+                        <Cell index={2} title={'Festlegung des Hinweises'} numberIcon={<LooksTwoIcon/>} titleIcon={<FeedbackIcon/>}></Cell>
+                    </Stack>
+                </Card>
+                <Card>
+                    <Stack bgcolor={'#ffffff'} sx={{ minWidth: 350, minHeight: 500, overflow: 'auto', width: 200, height: 424, border: 'solid'}}>
+                        <Cell index={3} title={'Teamreflektion'} numberIcon={<Looks3Icon/>} titleIcon={<GroupsIcon/>}></Cell>
                     </Stack>
                 </Card>
                 
                 <Stack>
                     <Card>
                         <Stack bgcolor={'#ffffff'} sx={{ minWidth: 350, maxHeight: 239, overflow: 'auto', width: 200, height: 424, border: 'solid'}}>
-                            <Cell index={3} title={'Proaktiv Hindernisse erkennen'} numberIcon={<Looks4Icon/>} titleIcon={<LiveHelpIcon/>}></Cell>
+                            <Cell index={4} title={'Proaktiv Hindernisse erkennen'} numberIcon={<Looks4Icon/>} titleIcon={<LiveHelpIcon/>}></Cell>
                         </Stack>
                     </Card>
                     <Card sx={{mt: 2}}>
                         <Stack bgcolor={'#ffffff'} sx={{minWidth: 350, maxHeight: 239, overflow: 'auto', width: 200, height: 424, border: 'solid'}}>
-                            <Cell index={4} title={'Gemeinsames Verständnis der Beteiligten'} numberIcon={<Looks5Icon/>} titleIcon={<InterpreterModeIcon/>}></Cell>
+                            <Cell index={5} title={'Gemeinsames Verständnis der Beteiligten'} numberIcon={<Looks5Icon/>} titleIcon={<InterpreterModeIcon/>}></Cell>
                         </Stack>
                     </Card>
                 </Stack>
                 <Card>
                     <Stack bgcolor={'#ffffff'} sx={{ direction: 'row', minWidth: 200, maxHeight: 300, overflow: 'auto', width: 1465, height: 424, border: 'solid'}}>
-                        <Cell index={5} title={'Sensing Datenbank'} numberIcon={<Looks6Icon/>} titleIcon={<StorageIcon/>}></Cell>
+                        <Cell index={6} title={'Sensing Datenbank'} numberIcon={<Looks6Icon/>} titleIcon={<StorageIcon/>}></Cell>
                     </Stack>
                 </Card>
             </Stack>

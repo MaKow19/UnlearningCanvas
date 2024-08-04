@@ -15,7 +15,7 @@ import InterpreterModeIcon from '@mui/icons-material/InterpreterMode';
 const Layout = () => {
     return (
         
-            <Stack width={'2px'} display={'flex'} direction={'row'} justifyContent={'center'} spacing={2} useFlexGap flexWrap="wrap">
+            <Stack width={'2px'} display={'flex'} direction={'row'} justifyContent={'center'} spacing={2} useFlexGap flexWrap="wrap" minWidth={'1800px'}>
                 <Card>
                     <Stack bgcolor={'#ffffff'} sx={{ minWidth: 300, minHeight: 500, overflow: 'auto', width: 190, height: 424, border: 'solid'}}>
                         <Cell index={0} title={'Festlegung der Rahmenbendingen'} ></Cell>

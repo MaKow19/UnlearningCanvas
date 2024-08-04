@@ -18,11 +18,10 @@ const steps = [
   {
     title: 'Festlegung der Rahmenbedingung',
     description: [
-      "Sammeln und Reflektieren von Hinweisen, die auf die Notwendigkeit eines Unlearning-Prozesses hinweisen.",
-      "1. Zusammenkommen der Mitarbeiter der öffentlichen Verwaltung.",
-      "2. Identifizieren von externen Hinweisen wie neue Gesetze oder Vorschriften.",
-      "3. Identifizieren von internen Hinweisen wie sinkende Effizienz oder veraltete Praktiken.",
-      "Offene Diskussion über alle gesammelten Hinweise, um ein umfassendes Bild zu bekommen."
+      "Festlegung der Limitationen",
+      "1. Detaillierte Beschreibung der Einschränkungen und Begrenzungen: Erfassen und Dokumentieren spezifischer Einschränkungen und Begrenzungen, die den Unlearning-Prozess beeinflussen könnten.",
+      "2. Zuständigkeiten: Festlegen der Verantwortlichkeiten und Zuständigkeiten innerhalb der Organisation, um klare Strukturen und Verantwortungsbereiche zu schaffen.",
+      "3. Liste der involvierten Personen oder Personengruppen: Zusammenstellen einer detaillierten Liste der beteiligten Personen oder Gruppen, um sicherzustellen, dass alle relevanten Stakeholder einbezogen und informiert werden.",
     ],
     image: FestlegungDerRahmenbedingung
   },
@@ -130,9 +129,9 @@ const Anleitung: React.FC<AnleitungProps> = ({ index }) => {
         Anleitung für das Unlearning-Tool
       </Typography>
       {index !== undefined ? (
-        renderStep(steps[index], index)
+        renderStep(steps[index], index - 1)
       ) : (
-        steps.map((step, i) => renderStep(step, i))
+        steps.map((step, i) => renderStep(step, i - 1))
       )}
     </Stack>
   );

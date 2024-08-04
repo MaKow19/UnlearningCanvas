@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { TextField, Button, Box, Typography, Alert } from '@mui/material';
 
 // Typdefinitionen für die Session
@@ -22,14 +22,14 @@ const CreateSession: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
       event.preventDefault();
       try {
-          const response = await axios.get<Session>(`http://localhost:8080/about/${sessionId}`);
+          const response = await axios.get<Session>(`http://unlearningcanvasbackend-production.up.railway.app/${sessionId}`);
           setSessionData(response.data);
           setSuccess('Session found successfully.');
           setError(null);
       } catch (error: any) {
           if (error.response?.status === 404) {
               const newSession: Session = { sessionId, feld: '', feld2: '', feld3: '', feld4: '', feld5: '', feld6: '' };
-              await axios.post('http://localhost:8080/about', newSession);
+              await axios.post('http://unlearningcanvasbackend-production.up.railway.app/about', newSession);
               setSessionData(newSession);
               setSuccess('New session created successfully.');
               setError(null);

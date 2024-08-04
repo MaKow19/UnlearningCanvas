@@ -11,6 +11,7 @@ function App() {
         <NavBar />
           <Routes>
               <Route index element={<About/>} />
+              <Route path='' element={<About/>} />
               <Route path='/about' element={<About/>} />
               <Route path='/canvas' element={<Canvas/>} />
           </Routes>

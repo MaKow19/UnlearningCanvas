@@ -22,14 +22,14 @@ const CreateSession: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
       event.preventDefault();
       try {
-          const response = await axios.get<Session>(`https://unlearningcanvasbackend-production.up.railway.app/${sessionId}`);
+          const response = await axios.get<Session>(`https://unlearningcanvasbackend-production.up.railway.app/api/${sessionId}`);
           setSessionData(response.data);
           setSuccess('Session found successfully.');
           setError(null);
       } catch (error: any) {
           if (error.response?.status === 404) {
               const newSession: Session = { sessionId, feld: '', feld2: '', feld3: '', feld4: '', feld5: '', feld6: '' };
-              await axios.post('https://unlearningcanvasbackend-production.up.railway.app/about', newSession);
+              await axios.post('https://unlearningcanvasbackend-production.up.railway.app/api/about', newSession);
               setSessionData(newSession);
               setSuccess('New session created successfully.');
               setError(null);

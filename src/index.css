@@ -47,7 +47,7 @@ button {
 }
 button:hover {
   border-color: #646cff;
-  outline: 4px auto -webkit-focus-ring-color;
+   outline: 4px auto -webkit-focus-ring-color;
 }
 button:focus,
 button:focus-visible {
@@ -92,4 +92,5 @@ html body {
   padding: 0;
   margin: 0;
   overflow-y: inherit;
+  overflow-y: hidden;
 }

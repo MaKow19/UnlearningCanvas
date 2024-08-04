@@ -23,7 +23,7 @@ const About = () => {
         }
     
         try {
-            const response = await axios.post('http://localhost:8080/api/about', { sessionId }, {
+            const response = await axios.post('http://unlearningcanvasbackend-production.up.railway.app/api/about', { sessionId }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -97,7 +97,7 @@ const About = () => {
                     <CardContent sx={{bgcolor: '#f2f4ff'}}>
                         <Button>
                             <Link to='/canvas' style={{ textDecoration: 'none' }}>
-                                <Typography sx={{ color: 'black', padding: '0.5rem', borderRadius: '4px' }}>
+                                <Typography sx={{ color: 'black', padding: '0.5rem', borderRadius: '4px', width: '225px'}}>
                                     Zum Canvas
                                 </Typography>
                             </Link>

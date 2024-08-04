@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 export const fetchSessionData = async (sessionId: string) => {
-    const response = await axios.get(`http://localhost:8080/api/about/${sessionId}`);
+    const response = await axios.get(`http://unlearningcanvasbackend-production.up.railway.app/${sessionId}`);
     return response.data;
 };
 
 export const updateSessionData = async (sessionId: string, fieldName: string, data: string[]) => {
     try {
-        const response = await axios.put(`http://localhost:8080/api/canvas/${sessionId}/${fieldName}`, data);
+        const response = await axios.put(`http://unlearningcanvasbackend-production.up.railway.app/${sessionId}/${fieldName}`, data);
         return response.data;
     } catch (error) {
         console.error('Error updating session data:', error);
@@ -17,7 +17,7 @@ export const updateSessionData = async (sessionId: string, fieldName: string, da
 
 export const deleteSessionDataItem = async (sessionId: string, fieldName: string, index: number) => {
     try {
-        const response = await axios.delete(`http://localhost:8080/api/canvas/${sessionId}/${fieldName}/${index}`);
+        const response = await axios.delete(`http://unlearningcanvasbackend-production.up.railway.app/${sessionId}/${fieldName}/${index}`);
         return response.data;
     } catch (error) {
         console.error('Error delteing session data item:', error);

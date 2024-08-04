@@ -102,7 +102,7 @@ const Anleitung: React.FC<AnleitungProps> = ({ index }) => {
     <Card key={index} sx={{bgcolor: '#f2f4ff', maxWidth: 1200}}>
       <CardContent>
         <Typography variant='h5' sx={{ mb: 2 }}>
-          {index + 1}. {step.title}
+          {index + 1}. {step.title} 
         </Typography>
         
           {step.description.map((description, index) => (

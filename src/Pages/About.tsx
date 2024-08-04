@@ -39,7 +39,7 @@ const About = () => {
     };
     
     return (
-        <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} width={2000} height={'auto'}>
+        <Stack direction={'column'} alignItems={'center'} justifyContent={'center'} width={'1800px'} height={'auto'}>
             <Stack direction={'row'} width={1200} sx={{ pb: 7, justifyContent: 'center' }}>
                 <Card sx={{ mr: 10, minWidth: 550, bgcolor: '#f2f4ff'}}>
                     <Typography variant='h4'>

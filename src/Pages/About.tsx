@@ -23,7 +23,7 @@ const About = () => {
         }
     
         try {
-            const response = await axios.post('http://unlearningcanvasbackend-production.up.railway.app/api/about', { sessionId }, {
+            const response = await axios.post('https://unlearningcanvasbackend-production.up.railway.app/api/about', { sessionId }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

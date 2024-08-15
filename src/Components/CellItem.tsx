@@ -49,12 +49,12 @@ const CellItem: React.FC<CellItemProps> = ({ texts, onEditItem, editableIndex, s
                                 /*
                                 // @ts-ignore */
                                 onKeyUp={(e) => handleItemKeyUp(e, index)}
-                                sx={{width: 'inherit'}}
+                                
                                 autoFocus
                             />
                         ) : (
                             <>
-                                <ListItemButton onClick={() => handleButtonClick(index)} sx={{width: '70%'}}>
+                                <ListItemButton onClick={() => handleButtonClick(index)} sx={{width: 'inherit'}}>
                                     <ListItemIcon sx={{ml: '-20px'}}>
                                         <EditIcon/>
                                     </ListItemIcon>

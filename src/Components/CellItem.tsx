@@ -37,7 +37,7 @@ const CellItem: React.FC<CellItemProps> = ({ texts, onEditItem, editableIndex, s
         <Grid item>
             <List >
                 {texts.map((text, index) => (
-                    <ListItem key={index} sx={{hyphens: 'manual', overflow: 'hidden'}}>
+                    <ListItem key={index} sx={{hyphens: 'manual', overflow: 'hidden', width: 'auto'}}>
                         {editableIndex === index ? (
                             <TextField
                                 value={text}

@@ -35,9 +35,9 @@ const CellItem: React.FC<CellItemProps> = ({ texts, onEditItem, editableIndex, s
     //types passen schon
     return (
         <Grid item>
-            <List >
+            <List>
                 {texts.map((text, index) => (
-                    <ListItem key={index} sx={{hyphens: 'manual', overflow: 'hidden', width: 'auto'}}>
+                    <ListItem key={index} sx={{hyphens: 'manual', overflow: 'hidden'}}>
                         {editableIndex === index ? (
                             <TextField
                                 value={text}
@@ -49,9 +49,8 @@ const CellItem: React.FC<CellItemProps> = ({ texts, onEditItem, editableIndex, s
                                 /*
                                 // @ts-ignore */
                                 onKeyUp={(e) => handleItemKeyUp(e, index)}
-                                fullWidth
+                                sx={{width: 'auto'}}
                                 autoFocus
-                        
                             />
                         ) : (
                             <>

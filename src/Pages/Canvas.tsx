@@ -12,13 +12,14 @@ import FeedbackIcon from '@mui/icons-material/Feedback';
 import StorageIcon from '@mui/icons-material/Storage';
 import InterpreterModeIcon from '@mui/icons-material/InterpreterMode';
 
+//TODO: Refactor von Layout zu Canvas
 const Layout = () => {
     return (
         
             <Stack width={'2px'} display={'flex'} direction={'row'} justifyContent={'center'} spacing={2} useFlexGap flexWrap="wrap" minWidth={'1800px'}>
                 <Card>
                     <Stack bgcolor={'#ffffff'} sx={{ minWidth: 300, minHeight: 500, overflow: 'auto', width: 190, height: 424, border: 'solid'}}>
-                        <Cell index={0} title={'Festlegung der Rahmenbendingen'} ></Cell>
+                        <Cell index={0} title={'Festlegung der Rahmenbedingung'} ></Cell>
                     </Stack>
                 </Card>
                 <Card>
@@ -33,7 +34,7 @@ const Layout = () => {
                 </Card>
                 <Card>
                     <Stack bgcolor={'#ffffff'} sx={{ minWidth: 300, minHeight: 500, overflow: 'auto', width: 190, height: 424, border: 'solid'}}>
-                        <Cell index={3} title={'Teamreflektion'} numberIcon={<Looks3Icon/>} titleIcon={<GroupsIcon/>}></Cell>
+                        <Cell index={3} title={'Teamreflexion'} numberIcon={<Looks3Icon/>} titleIcon={<GroupsIcon/>}></Cell>
                     </Stack>
                 </Card>
                 

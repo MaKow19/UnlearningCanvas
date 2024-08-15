@@ -49,7 +49,7 @@ const CellItem: React.FC<CellItemProps> = ({ texts, onEditItem, editableIndex, s
                                 /*
                                 // @ts-ignore */
                                 onKeyUp={(e) => handleItemKeyUp(e, index)}
-                                sx={{width: 'auto'}}
+                                sx={{width: 'inherit'}}
                                 autoFocus
                             />
                         ) : (

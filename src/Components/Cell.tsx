@@ -1,4 +1,4 @@
-import { Grid, Divider, TextField, Typography, Stack } from "@mui/material";
+import { Grid, Divider, TextField, Typography, Stack, Box } from "@mui/material";
 import React, { useState, useEffect, ChangeEvent, KeyboardEvent } from "react";
 import CellItem from './CellItem';
 import InfoCanvasButton from "./InfoCanvasButton";
@@ -100,11 +100,16 @@ const Cell = ({ title, numberIcon, titleIcon, index }: CellProps) => {
             <Stack height={'auto'} sx={{ pb: 1 }}>
                 <Typography variant={'h5'}>
                     {title}
-                    <InfoCanvasButton title={title} index={index} />
+                    
                 </Typography>
             </Stack>
-            {numberIcon}
-            {titleIcon}
+            <Box>
+                <InfoCanvasButton title={title} index={index} />
+            </Box>
+            <Box>
+                {numberIcon}
+                {titleIcon}
+            </Box>
             <Divider sx={{ bgcolor: 'black', mt: '5px' }} />
             <CellItem
                 texts={itemList}
